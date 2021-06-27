@@ -1,0 +1,14 @@
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\bin\Release\QLThuVien.exe.config
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\bin\Release\QLThuVien.exe
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\bin\Release\QLThuVien.pdb
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.frmBill.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.frmBook.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.frmBuy.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.frmLogin.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.frmMain.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.frmReader.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.Properties.Resources.resources
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.csproj.GenerateResource.Cache
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.exe
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.pdb
+H:\Học\VS 2013\LibraryManagement\QLThuVien\QLThuVien\obj\Release\QLThuVien.csprojResolveAssemblyReference.cache

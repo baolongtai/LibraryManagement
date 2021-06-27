@@ -67,8 +67,8 @@
             this.txbUnitPrice = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tpProducer = new System.Windows.Forms.TabPage();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnSearchPublisher = new System.Windows.Forms.Button();
+            this.btnRepairPublisher = new System.Windows.Forms.Button();
             this.btnDeletePublisher = new System.Windows.Forms.Button();
             this.btnAddPublisher = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -81,8 +81,8 @@
             this.txbPublisherID = new System.Windows.Forms.TextBox();
             this.txbPublisherName = new System.Windows.Forms.TextBox();
             this.tpAuthor = new System.Windows.Forms.TabPage();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSearchAuthor = new System.Windows.Forms.Button();
+            this.btnRepairAuthor = new System.Windows.Forms.Button();
             this.btnDeleteAuthor = new System.Windows.Forms.Button();
             this.btnAddAuthor = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -95,10 +95,10 @@
             this.txbAuthorID = new System.Windows.Forms.TextBox();
             this.txbAuthorName = new System.Windows.Forms.TextBox();
             this.tpCategory = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRepairType = new System.Windows.Forms.Button();
             this.btnDeleteType = new System.Windows.Forms.Button();
             this.btnAddType = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnSearchType = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvTypeBook = new System.Windows.Forms.DataGridView();
             this.TYPE_BOOK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -509,8 +509,8 @@
             // 
             // tpProducer
             // 
-            this.tpProducer.Controls.Add(this.button9);
-            this.tpProducer.Controls.Add(this.button10);
+            this.tpProducer.Controls.Add(this.btnSearchPublisher);
+            this.tpProducer.Controls.Add(this.btnRepairPublisher);
             this.tpProducer.Controls.Add(this.btnDeletePublisher);
             this.tpProducer.Controls.Add(this.btnAddPublisher);
             this.tpProducer.Controls.Add(this.groupBox6);
@@ -523,36 +523,37 @@
             this.tpProducer.Text = "Nhà sản xuất";
             this.tpProducer.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnSearchPublisher
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button9.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button9.ForeColor = System.Drawing.Color.Green;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(380, 54);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(102, 35);
-            this.button9.TabIndex = 76;
-            this.button9.Text = "Lưu";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnSearchPublisher.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearchPublisher.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSearchPublisher.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnSearchPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnSearchPublisher.ForeColor = System.Drawing.Color.Green;
+            this.btnSearchPublisher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchPublisher.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearchPublisher.Location = new System.Drawing.Point(380, 54);
+            this.btnSearchPublisher.Name = "btnSearchPublisher";
+            this.btnSearchPublisher.Size = new System.Drawing.Size(102, 35);
+            this.btnSearchPublisher.TabIndex = 76;
+            this.btnSearchPublisher.Text = "Tìm kiếm";
+            this.btnSearchPublisher.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnRepairPublisher
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button10.Location = new System.Drawing.Point(490, 6);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(102, 35);
-            this.button10.TabIndex = 75;
-            this.button10.Text = "Sửa";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnRepairPublisher.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepairPublisher.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnRepairPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRepairPublisher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepairPublisher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepairPublisher.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepairPublisher.Location = new System.Drawing.Point(490, 6);
+            this.btnRepairPublisher.Name = "btnRepairPublisher";
+            this.btnRepairPublisher.Size = new System.Drawing.Size(102, 35);
+            this.btnRepairPublisher.TabIndex = 75;
+            this.btnRepairPublisher.Text = "Sửa";
+            this.btnRepairPublisher.UseVisualStyleBackColor = false;
+            this.btnRepairPublisher.Click += new System.EventHandler(this.btnRepairPublisher_Click);
             // 
             // btnDeletePublisher
             // 
@@ -568,6 +569,7 @@
             this.btnDeletePublisher.TabIndex = 74;
             this.btnDeletePublisher.Text = "Xóa";
             this.btnDeletePublisher.UseVisualStyleBackColor = false;
+            this.btnDeletePublisher.Click += new System.EventHandler(this.btnDeletePublisher_Click);
             // 
             // btnAddPublisher
             // 
@@ -583,6 +585,7 @@
             this.btnAddPublisher.TabIndex = 73;
             this.btnAddPublisher.Text = "Thêm";
             this.btnAddPublisher.UseVisualStyleBackColor = false;
+            this.btnAddPublisher.Click += new System.EventHandler(this.btnAddPublisher_Click);
             // 
             // groupBox6
             // 
@@ -677,8 +680,8 @@
             // tpAuthor
             // 
             this.tpAuthor.BackColor = System.Drawing.Color.LightCyan;
-            this.tpAuthor.Controls.Add(this.button14);
-            this.tpAuthor.Controls.Add(this.button2);
+            this.tpAuthor.Controls.Add(this.btnSearchAuthor);
+            this.tpAuthor.Controls.Add(this.btnRepairAuthor);
             this.tpAuthor.Controls.Add(this.btnDeleteAuthor);
             this.tpAuthor.Controls.Add(this.btnAddAuthor);
             this.tpAuthor.Controls.Add(this.groupBox4);
@@ -690,36 +693,38 @@
             this.tpAuthor.TabIndex = 1;
             this.tpAuthor.Text = "Tác giả";
             // 
-            // button14
+            // btnSearchAuthor
             // 
-            this.button14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button14.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button14.ForeColor = System.Drawing.Color.Green;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button14.Location = new System.Drawing.Point(380, 54);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(102, 35);
-            this.button14.TabIndex = 77;
-            this.button14.Text = "Lưu";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnSearchAuthor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearchAuthor.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSearchAuthor.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnSearchAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnSearchAuthor.ForeColor = System.Drawing.Color.Green;
+            this.btnSearchAuthor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearchAuthor.Location = new System.Drawing.Point(380, 54);
+            this.btnSearchAuthor.Name = "btnSearchAuthor";
+            this.btnSearchAuthor.Size = new System.Drawing.Size(102, 35);
+            this.btnSearchAuthor.TabIndex = 77;
+            this.btnSearchAuthor.Text = "Tìm kiếm";
+            this.btnSearchAuthor.UseVisualStyleBackColor = false;
+            this.btnSearchAuthor.Click += new System.EventHandler(this.btnSearchAuthor_Click);
             // 
-            // button2
+            // btnRepairAuthor
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(490, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 35);
-            this.button2.TabIndex = 75;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRepairAuthor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepairAuthor.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnRepairAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRepairAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepairAuthor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepairAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepairAuthor.Location = new System.Drawing.Point(490, 6);
+            this.btnRepairAuthor.Name = "btnRepairAuthor";
+            this.btnRepairAuthor.Size = new System.Drawing.Size(102, 35);
+            this.btnRepairAuthor.TabIndex = 75;
+            this.btnRepairAuthor.Text = "Sửa";
+            this.btnRepairAuthor.UseVisualStyleBackColor = false;
+            this.btnRepairAuthor.Click += new System.EventHandler(this.btnRepairAuthor_Click);
             // 
             // btnDeleteAuthor
             // 
@@ -735,6 +740,7 @@
             this.btnDeleteAuthor.TabIndex = 74;
             this.btnDeleteAuthor.Text = "Xóa";
             this.btnDeleteAuthor.UseVisualStyleBackColor = false;
+            this.btnDeleteAuthor.Click += new System.EventHandler(this.btnDeleteAuthor_Click);
             // 
             // btnAddAuthor
             // 
@@ -750,6 +756,7 @@
             this.btnAddAuthor.TabIndex = 73;
             this.btnAddAuthor.Text = "Thêm";
             this.btnAddAuthor.UseVisualStyleBackColor = false;
+            this.btnAddAuthor.Click += new System.EventHandler(this.btnAddAuthor_Click);
             // 
             // groupBox4
             // 
@@ -844,10 +851,10 @@
             // tpCategory
             // 
             this.tpCategory.BackColor = System.Drawing.Color.LightBlue;
-            this.tpCategory.Controls.Add(this.button3);
+            this.tpCategory.Controls.Add(this.btnRepairType);
             this.tpCategory.Controls.Add(this.btnDeleteType);
             this.tpCategory.Controls.Add(this.btnAddType);
-            this.tpCategory.Controls.Add(this.button7);
+            this.tpCategory.Controls.Add(this.btnSearchType);
             this.tpCategory.Controls.Add(this.groupBox1);
             this.tpCategory.Controls.Add(this.groupBox3);
             this.tpCategory.Location = new System.Drawing.Point(4, 25);
@@ -857,20 +864,21 @@
             this.tpCategory.TabIndex = 0;
             this.tpCategory.Text = "Thể loại";
             // 
-            // button3
+            // btnRepairType
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(490, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 35);
-            this.button3.TabIndex = 69;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnRepairType.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepairType.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnRepairType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRepairType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepairType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepairType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepairType.Location = new System.Drawing.Point(490, 6);
+            this.btnRepairType.Name = "btnRepairType";
+            this.btnRepairType.Size = new System.Drawing.Size(102, 35);
+            this.btnRepairType.TabIndex = 69;
+            this.btnRepairType.Text = "Sửa";
+            this.btnRepairType.UseVisualStyleBackColor = false;
+            this.btnRepairType.Click += new System.EventHandler(this.btnRepairType_Click);
             // 
             // btnDeleteType
             // 
@@ -886,6 +894,7 @@
             this.btnDeleteType.TabIndex = 68;
             this.btnDeleteType.Text = "Xóa";
             this.btnDeleteType.UseVisualStyleBackColor = false;
+            this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
             // 
             // btnAddType
             // 
@@ -903,21 +912,22 @@
             this.btnAddType.UseVisualStyleBackColor = false;
             this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
-            // button7
+            // btnSearchType
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button7.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button7.ForeColor = System.Drawing.Color.Green;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(380, 54);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 35);
-            this.button7.TabIndex = 70;
-            this.button7.Text = "Lưu";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnSearchType.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearchType.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSearchType.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnSearchType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnSearchType.ForeColor = System.Drawing.Color.Green;
+            this.btnSearchType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearchType.Location = new System.Drawing.Point(380, 54);
+            this.btnSearchType.Name = "btnSearchType";
+            this.btnSearchType.Size = new System.Drawing.Size(102, 35);
+            this.btnSearchType.TabIndex = 70;
+            this.btnSearchType.Text = "Tìm kiếm";
+            this.btnSearchType.UseVisualStyleBackColor = false;
+            this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
             // 
             // groupBox1
             // 
@@ -1114,8 +1124,8 @@
         private System.Windows.Forms.NumericUpDown nmudQuantity;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TabPage tpProducer;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnSearchPublisher;
+        private System.Windows.Forms.Button btnRepairPublisher;
         private System.Windows.Forms.Button btnDeletePublisher;
         private System.Windows.Forms.Button btnAddPublisher;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1126,8 +1136,8 @@
         private System.Windows.Forms.TextBox txbPublisherID;
         private System.Windows.Forms.TextBox txbPublisherName;
         private System.Windows.Forms.TabPage tpAuthor;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearchAuthor;
+        private System.Windows.Forms.Button btnRepairAuthor;
         private System.Windows.Forms.Button btnDeleteAuthor;
         private System.Windows.Forms.Button btnAddAuthor;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1138,10 +1148,10 @@
         private System.Windows.Forms.TextBox txbAuthorID;
         private System.Windows.Forms.TextBox txbAuthorName;
         private System.Windows.Forms.TabPage tpCategory;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRepairType;
         private System.Windows.Forms.Button btnDeleteType;
         private System.Windows.Forms.Button btnAddType;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSearchType;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvTypeBook;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1154,9 +1164,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txbAuthorID_2;
         private System.Windows.Forms.TextBox txbTypeBookID_2;
-        private LIBRARYMANGAEDataSet lIBRARYMANGAEDataSet;
-        private LIBRARYMANGAEDataSetTableAdapters.AUTHORTableAdapter aUTHORTableAdapter;
-        private LIBRARYMANGAEDataSetTableAdapters.BOOKSTableAdapter bOOKSTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn bOOKIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bOOKNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qUANTITYDataGridViewTextBoxColumn;
@@ -1166,16 +1173,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pUBLISHERIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pUBLISHINGYEARDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATERECEIPTDataGridViewTextBoxColumn;
-        private LIBRARYMANGAEDataSet lIBRARYMANGAEDataSet1;
-        private LIBRARYMANGAEDataSetTableAdapters.TYPE_BOOKTableAdapter tYPE_BOOKTableAdapter;
-        private LIBRARYMANGAEDataSetTableAdapters.PUBLISHERTableAdapter pUBLISHERTableAdapter;
-        private LIBRARYMANGAEDataSetTableAdapters.AUTHORTableAdapter aUTHORTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn PUBLISHER_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PUBLISHER_NAME;
-        private LIBRARYMANGAEDataSet lIBRARYMANGAEDataSet2;
-        private LIBRARYMANGAEDataSetTableAdapters.BOOKSTableAdapter bOOKSTableAdapter1;
-        private LIBRARYMANGAEDataSet lIBRARYMANGAEDataSet3;
-        private LIBRARYMANGAEDataSetTableAdapters.TYPE_BOOKTableAdapter tYPE_BOOKTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_BOOK_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_BOOK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_ID;

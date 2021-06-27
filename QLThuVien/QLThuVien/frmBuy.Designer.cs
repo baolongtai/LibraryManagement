@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.grInforBook = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -40,22 +39,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.bOOKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clBookName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TYPE_BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUBJECT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UNIT_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAcces = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.grInforBook.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grInforBook
@@ -174,67 +171,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(861, 446);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Lavender;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSearch.Location = new System.Drawing.Point(1064, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(102, 28);
-            this.btnSearch.TabIndex = 45;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(896, 21);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(162, 24);
-            this.cbSearch.TabIndex = 46;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(0, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(475, 38);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "DANH MỤC ĐĂNG KÝ SÁCH";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Lavender;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Green;
-            this.button1.Location = new System.Drawing.Point(7, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 28);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Đăng ký";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Lavender;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(185, 216);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 28);
-            this.btnCancel.TabIndex = 50;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            // 
             // clBookName
             // 
             this.clBookName.DataPropertyName = "BOOK_NAME";
-            this.clBookName.DataSource = this.bOOKSBindingSource;
             this.clBookName.HeaderText = "Tên sách";
             this.clBookName.Name = "clBookName";
             this.clBookName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -271,6 +210,64 @@
             this.UNIT_PRICE.HeaderText = "Đơn giá";
             this.UNIT_PRICE.Name = "UNIT_PRICE";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Lavender;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearch.Location = new System.Drawing.Point(1064, 17);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(102, 28);
+            this.btnSearch.TabIndex = 45;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(896, 21);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(162, 24);
+            this.cbSearch.TabIndex = 46;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(0, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(475, 38);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "DANH MỤC ĐĂNG KÝ SÁCH";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // btnAcces
+            // 
+            this.btnAcces.BackColor = System.Drawing.Color.Lavender;
+            this.btnAcces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcces.ForeColor = System.Drawing.Color.Green;
+            this.btnAcces.Location = new System.Drawing.Point(7, 216);
+            this.btnAcces.Name = "btnAcces";
+            this.btnAcces.Size = new System.Drawing.Size(108, 28);
+            this.btnAcces.TabIndex = 49;
+            this.btnAcces.Text = "Đăng ký";
+            this.btnAcces.UseVisualStyleBackColor = false;
+            this.btnAcces.Click += new System.EventHandler(this.btnAcces_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Lavender;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(185, 216);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(108, 28);
+            this.btnCancel.TabIndex = 50;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
             // frmBuy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,7 +275,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1197, 556);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAcces);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbSearch);
@@ -292,7 +289,6 @@
             this.grInforBook.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,12 +307,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDateBuy;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAcces;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.BindingSource bOOKSBindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn clBookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_BOOK_NAME;

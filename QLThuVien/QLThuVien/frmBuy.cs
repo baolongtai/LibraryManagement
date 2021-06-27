@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace QLThuVien
 {
     public partial class frmBuy : Form
     {
+        SqlConnection sqlConn = new SqlConnection();
+        SqlCommand sqlComm = new SqlCommand();
+
         public frmBuy()
         {
             InitializeComponent();
@@ -19,6 +23,12 @@ namespace QLThuVien
 
         private void frmBuy_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAcces_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

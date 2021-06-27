@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.grInforBook = new System.Windows.Forms.GroupBox();
+            this.txbSubjectID_2 = new System.Windows.Forms.TextBox();
+            this.txbClassID_2 = new System.Windows.Forms.TextBox();
+            this.txbCourseID_2 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.dtpDateAdd = new System.Windows.Forms.DateTimePicker();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -111,9 +114,6 @@
             this.SUBJECT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbShow = new System.Windows.Forms.CheckBox();
-            this.txbCourseID_2 = new System.Windows.Forms.TextBox();
-            this.txbClassID_2 = new System.Windows.Forms.TextBox();
-            this.txbSubjectID_2 = new System.Windows.Forms.TextBox();
             this.grInforBook.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -159,6 +159,27 @@
             this.grInforBook.TabIndex = 36;
             this.grInforBook.TabStop = false;
             this.grInforBook.Text = "Thông tin độc giả";
+            // 
+            // txbSubjectID_2
+            // 
+            this.txbSubjectID_2.Location = new System.Drawing.Point(413, 91);
+            this.txbSubjectID_2.Name = "txbSubjectID_2";
+            this.txbSubjectID_2.Size = new System.Drawing.Size(155, 24);
+            this.txbSubjectID_2.TabIndex = 18;
+            // 
+            // txbClassID_2
+            // 
+            this.txbClassID_2.Location = new System.Drawing.Point(413, 60);
+            this.txbClassID_2.Name = "txbClassID_2";
+            this.txbClassID_2.Size = new System.Drawing.Size(155, 24);
+            this.txbClassID_2.TabIndex = 17;
+            // 
+            // txbCourseID_2
+            // 
+            this.txbCourseID_2.Location = new System.Drawing.Point(413, 29);
+            this.txbCourseID_2.Name = "txbCourseID_2";
+            this.txbCourseID_2.Size = new System.Drawing.Size(155, 24);
+            this.txbCourseID_2.TabIndex = 16;
             // 
             // label19
             // 
@@ -1035,27 +1056,6 @@
             this.cbShow.Text = "Xem";
             this.cbShow.UseVisualStyleBackColor = true;
             this.cbShow.CheckedChanged += new System.EventHandler(this.cbShow_CheckedChanged);
-            // 
-            // txbCourseID_2
-            // 
-            this.txbCourseID_2.Location = new System.Drawing.Point(413, 29);
-            this.txbCourseID_2.Name = "txbCourseID_2";
-            this.txbCourseID_2.Size = new System.Drawing.Size(155, 24);
-            this.txbCourseID_2.TabIndex = 16;
-            // 
-            // txbClassID_2
-            // 
-            this.txbClassID_2.Location = new System.Drawing.Point(413, 60);
-            this.txbClassID_2.Name = "txbClassID_2";
-            this.txbClassID_2.Size = new System.Drawing.Size(155, 24);
-            this.txbClassID_2.TabIndex = 17;
-            // 
-            // txbSubjectID_2
-            // 
-            this.txbSubjectID_2.Location = new System.Drawing.Point(413, 91);
-            this.txbSubjectID_2.Name = "txbSubjectID_2";
-            this.txbSubjectID_2.Size = new System.Drawing.Size(155, 24);
-            this.txbSubjectID_2.TabIndex = 18;
             // 
             // frmReader
             // 

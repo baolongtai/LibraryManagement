@@ -67,7 +67,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1124, 672);
+            this.dataGridView1.Size = new System.Drawing.Size(1124, 569);
             this.dataGridView1.TabIndex = 50;
             // 
             // clBillID
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1148, 733);
+            this.ClientSize = new System.Drawing.Size(1197, 870);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
