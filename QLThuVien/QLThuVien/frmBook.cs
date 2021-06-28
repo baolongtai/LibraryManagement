@@ -255,6 +255,7 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
                 //MessageBox.Show (sqlCommType.CommandText.ToString ());
             }
+            ResetControlValues();
             CloseConnect();
         }
         private void btnRepairType_Click(object sender, EventArgs e)
@@ -273,6 +274,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             txbCategoryID.ReadOnly = false;
             CloseConnect();
         }
@@ -291,6 +293,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             CloseConnect();
         }
 
@@ -328,6 +331,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             CloseConnect();
         }
 
@@ -345,6 +349,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             txbAuthorID.ReadOnly = false;
             CloseConnect();
         }
@@ -363,6 +368,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             CloseConnect();
         }
 
@@ -371,6 +377,7 @@ namespace QLThuVien
 
         }
 
+        // --- PUBLISHER ---
         private void btnAddPublisher_Click(object sender, EventArgs e)
         {
             OpenConnect();
@@ -385,6 +392,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             CloseConnect();
         }
 
@@ -402,6 +410,7 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             txbPublisherID.ReadOnly = false;
             CloseConnect();
         }
@@ -415,11 +424,13 @@ namespace QLThuVien
                 sqlCommPulisher.CommandText = "DELETE FROM PUBLISHER WHERE PUBLISHER_ID = '" + txbPublisherID.Text + "'";
                 sqlCommPulisher.ExecuteNonQuery();
                 LoadDBAuthor();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
+            ResetControlValues();
             CloseConnect();
         }
 

@@ -5,6 +5,20 @@ USE LIBRARYMANGAE
 
 --------------------------------------- TẠO BẢNG -----------------------------------------
 -- SINH VIÊN
+CREATE TABLE Admin(
+[UserAdmin] [varchar](30) primary key,
+[PassAdmin] [varchar](30) NOT NULL,
+[Hoten] [nvarchar](50) NOT NULL
+)
+
+CREATE TABLE classs(
+classid [varchar](30) primary key,
+)
+CREATE TABLE studenss(
+studenssid [varchar](30) primary key,
+classid [varchar](30)
+)
+
 CREATE TABLE STUDENT (
 	STUDENT_ID CHAR(10) NOT NULL,
 	STUDENT_NAME NVARCHAR(100),
@@ -163,10 +177,14 @@ ALTER TABLE "SUBJECT"
   ADD 
 	"TIME" INT
 
-	--- ĐỔI TÊN ---
+	--- ĐỔI KIỂU DỮ LIỆU ---
 ALTER TABLE BOOKS
 	ALTER  COLUMN BOOK_NAME NVARCHAR(150)
+	
+ALTER TABLE AUTHOR
+	ALTER  COLUMN AUTHOR_NAME NVARCHAR(150)
 	---------------
+	sp_rename 'BILL_DETAIL, AMOUNT', 'QUANTITY','COLUMN';
 ----------------------------
 
 --------------------------------------- TẠO KHÓA -----------------------------------------
@@ -190,6 +208,11 @@ ALTER TABLE AUTHOR CHECK CONSTRAINT [FK_AUTHOR_PUBLISHER]
 
 ------------------------------------- THÊM DỮ LIỆU ---------------------------------------
 --------- NHÓM SINH VIÊN
+INSERT Into Admin
+VALUES ('admin', '123456', 'Chủ rạp xiếc')
+INSERT Into Admin
+VALUES ('user', '789', 'Chúa hề')
+
 SET IDENTITY_INSERT COURSE ON
 INSERT COURSE (COURSE_ID, COURSE_NAME) VALUES ('K10', N'Khóa 10')
 INSERT COURSE (COURSE_ID, COURSE_NAME) VALUES ('K11', N'Khóa 11')

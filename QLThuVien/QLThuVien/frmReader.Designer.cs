@@ -45,24 +45,12 @@
             this.txbStudentID = new System.Windows.Forms.TextBox();
             this.txbStudentName = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRepair = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAddBook = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.STUDENT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STUDENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COURSE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLASS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUBJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_ADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
             this.tctReader = new System.Windows.Forms.TabControl();
             this.tp = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -70,10 +58,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txbCourseID = new System.Windows.Forms.TextBox();
             this.txbCourseName = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnRepairCourse = new System.Windows.Forms.Button();
+            this.btnDlCourse = new System.Windows.Forms.Button();
+            this.btnCourse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCourse = new System.Windows.Forms.DataGridView();
             this.COURSE_ID_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,10 +73,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txbClassID = new System.Windows.Forms.TextBox();
             this.txbClassName = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnRepairClass = new System.Windows.Forms.Button();
+            this.btnDlClass = new System.Windows.Forms.Button();
+            this.btnAddClass = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvClass = new System.Windows.Forms.DataGridView();
             this.CLASS_ID_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,16 +90,23 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txbSubjectID = new System.Windows.Forms.TextBox();
             this.txbSubjectName = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnRepairSubject = new System.Windows.Forms.Button();
+            this.btnDlSubject = new System.Windows.Forms.Button();
+            this.btnAddSubject = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvSubject = new System.Windows.Forms.DataGridView();
             this.SUBJECT_ID_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUBJECT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbShow = new System.Windows.Forms.CheckBox();
+            this.STUDENT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STUDENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COURSE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLASS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUBJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_ADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grInforBook.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -298,20 +291,21 @@
             this.txbEmail.Size = new System.Drawing.Size(155, 24);
             this.txbEmail.TabIndex = 9;
             // 
-            // btnEdit
+            // btnRepair
             // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEdit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEdit.Location = new System.Drawing.Point(115, 208);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(102, 28);
-            this.btnEdit.TabIndex = 42;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnRepair.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepair.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRepair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRepair.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepair.Location = new System.Drawing.Point(115, 208);
+            this.btnRepair.Name = "btnRepair";
+            this.btnRepair.Size = new System.Drawing.Size(102, 28);
+            this.btnRepair.TabIndex = 42;
+            this.btnRepair.Text = "Sửa";
+            this.btnRepair.UseVisualStyleBackColor = false;
+            this.btnRepair.Click += new System.EventHandler(this.btnRepair_Click);
             // 
             // btnDelete
             // 
@@ -327,44 +321,23 @@
             this.btnDelete.TabIndex = 41;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnAddBook
+            // btnAddStudent
             // 
-            this.btnAddBook.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAddBook.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.btnAddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddBook.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddBook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddBook.Location = new System.Drawing.Point(7, 208);
-            this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(102, 28);
-            this.btnAddBook.TabIndex = 40;
-            this.btnAddBook.Text = "Thêm";
-            this.btnAddBook.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSearch.Location = new System.Drawing.Point(175, 368);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(102, 28);
-            this.btnSearch.TabIndex = 51;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(7, 368);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(162, 26);
-            this.cbSearch.TabIndex = 52;
+            this.btnAddStudent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAddStudent.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddStudent.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAddStudent.Location = new System.Drawing.Point(7, 208);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(102, 28);
+            this.btnAddStudent.TabIndex = 40;
+            this.btnAddStudent.Text = "Thêm";
+            this.btnAddStudent.UseVisualStyleBackColor = false;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // groupBox3
             // 
@@ -386,7 +359,6 @@
             this.STUDENT_ID,
             this.STUDENT_NAME,
             this.PHONE,
-            this.ADDRESS,
             this.EMAIL,
             this.COURSE_ID,
             this.CLASS_ID,
@@ -399,60 +371,6 @@
             this.dgvStudent.Size = new System.Drawing.Size(1175, 443);
             this.dgvStudent.TabIndex = 0;
             // 
-            // STUDENT_ID
-            // 
-            this.STUDENT_ID.DataPropertyName = "STUDENT_ID";
-            this.STUDENT_ID.HeaderText = "Mã sinh viên";
-            this.STUDENT_ID.Name = "STUDENT_ID";
-            // 
-            // STUDENT_NAME
-            // 
-            this.STUDENT_NAME.DataPropertyName = "STUDENT_NAME";
-            this.STUDENT_NAME.HeaderText = "Tên sinh viên";
-            this.STUDENT_NAME.Name = "STUDENT_NAME";
-            // 
-            // PHONE
-            // 
-            this.PHONE.DataPropertyName = "PHONE";
-            this.PHONE.HeaderText = "Số điện thoại";
-            this.PHONE.Name = "PHONE";
-            // 
-            // ADDRESS
-            // 
-            this.ADDRESS.DataPropertyName = "ADDRESS";
-            this.ADDRESS.HeaderText = "Địa chỉ";
-            this.ADDRESS.Name = "ADDRESS";
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.DataPropertyName = "EMAIL";
-            this.EMAIL.HeaderText = "Email";
-            this.EMAIL.Name = "EMAIL";
-            // 
-            // COURSE_ID
-            // 
-            this.COURSE_ID.DataPropertyName = "COURSE_ID";
-            this.COURSE_ID.HeaderText = "Mã khóa";
-            this.COURSE_ID.Name = "COURSE_ID";
-            // 
-            // CLASS_ID
-            // 
-            this.CLASS_ID.DataPropertyName = "CLASS_ID";
-            this.CLASS_ID.HeaderText = "Mã lớp";
-            this.CLASS_ID.Name = "CLASS_ID";
-            // 
-            // SUBJECT_ID
-            // 
-            this.SUBJECT_ID.DataPropertyName = "SUBJECT_ID";
-            this.SUBJECT_ID.HeaderText = "Mã môn";
-            this.SUBJECT_ID.Name = "SUBJECT_ID";
-            // 
-            // DATE_ADD
-            // 
-            this.DATE_ADD.DataPropertyName = "DATE_ADD";
-            this.DATE_ADD.HeaderText = "Ngày thêm vào";
-            this.DATE_ADD.Name = "DATE_ADD";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -464,21 +382,6 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "DANH MỤC SINH VIÊN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.Green;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button13.Location = new System.Drawing.Point(223, 208);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(102, 28);
-            this.button13.TabIndex = 65;
-            this.button13.Text = "Cập nhập";
-            this.button13.UseVisualStyleBackColor = false;
             // 
             // tctReader
             // 
@@ -495,10 +398,9 @@
             // 
             this.tp.BackColor = System.Drawing.Color.LightBlue;
             this.tp.Controls.Add(this.groupBox2);
-            this.tp.Controls.Add(this.button3);
-            this.tp.Controls.Add(this.button4);
-            this.tp.Controls.Add(this.button6);
-            this.tp.Controls.Add(this.button7);
+            this.tp.Controls.Add(this.btnRepairCourse);
+            this.tp.Controls.Add(this.btnDlCourse);
+            this.tp.Controls.Add(this.btnCourse);
             this.tp.Controls.Add(this.groupBox1);
             this.tp.Location = new System.Drawing.Point(4, 25);
             this.tp.Name = "tp";
@@ -555,66 +457,53 @@
             this.txbCourseName.Size = new System.Drawing.Size(102, 22);
             this.txbCourseName.TabIndex = 8;
             // 
-            // button3
+            // btnRepairCourse
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(490, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 35);
-            this.button3.TabIndex = 69;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnRepairCourse.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepairCourse.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnRepairCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRepairCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepairCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepairCourse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepairCourse.Location = new System.Drawing.Point(490, 6);
+            this.btnRepairCourse.Name = "btnRepairCourse";
+            this.btnRepairCourse.Size = new System.Drawing.Size(102, 35);
+            this.btnRepairCourse.TabIndex = 69;
+            this.btnRepairCourse.Text = "Sửa";
+            this.btnRepairCourse.UseVisualStyleBackColor = false;
+            this.btnRepairCourse.Click += new System.EventHandler(this.btnRepairCourse_Click);
             // 
-            // button4
+            // btnDlCourse
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(490, 54);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 35);
-            this.button4.TabIndex = 68;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnDlCourse.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDlCourse.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnDlCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnDlCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDlCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDlCourse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDlCourse.Location = new System.Drawing.Point(490, 54);
+            this.btnDlCourse.Name = "btnDlCourse";
+            this.btnDlCourse.Size = new System.Drawing.Size(102, 35);
+            this.btnDlCourse.TabIndex = 68;
+            this.btnDlCourse.Text = "Xóa";
+            this.btnDlCourse.UseVisualStyleBackColor = false;
+            this.btnDlCourse.Click += new System.EventHandler(this.btnDlCourse_Click);
             // 
-            // button6
+            // btnCourse
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button6.Location = new System.Drawing.Point(380, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 35);
-            this.button6.TabIndex = 67;
-            this.button6.Text = "Thêm";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button7.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button7.ForeColor = System.Drawing.Color.Green;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(380, 54);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 35);
-            this.button7.TabIndex = 70;
-            this.button7.Text = "Lưu";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnCourse.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCourse.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCourse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCourse.Location = new System.Drawing.Point(380, 6);
+            this.btnCourse.Name = "btnCourse";
+            this.btnCourse.Size = new System.Drawing.Size(102, 35);
+            this.btnCourse.TabIndex = 67;
+            this.btnCourse.Text = "Thêm";
+            this.btnCourse.UseVisualStyleBackColor = false;
+            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
             // 
             // groupBox1
             // 
@@ -659,10 +548,9 @@
             // 
             this.tpClass.BackColor = System.Drawing.Color.LightCyan;
             this.tpClass.Controls.Add(this.groupBox5);
-            this.tpClass.Controls.Add(this.button14);
-            this.tpClass.Controls.Add(this.button2);
-            this.tpClass.Controls.Add(this.button5);
-            this.tpClass.Controls.Add(this.button8);
+            this.tpClass.Controls.Add(this.btnRepairClass);
+            this.tpClass.Controls.Add(this.btnDlClass);
+            this.tpClass.Controls.Add(this.btnAddClass);
             this.tpClass.Controls.Add(this.groupBox4);
             this.tpClass.Location = new System.Drawing.Point(4, 25);
             this.tpClass.Name = "tpClass";
@@ -738,66 +626,53 @@
             this.txbClassName.Size = new System.Drawing.Size(94, 22);
             this.txbClassName.TabIndex = 8;
             // 
-            // button14
+            // btnRepairClass
             // 
-            this.button14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button14.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button14.ForeColor = System.Drawing.Color.Green;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button14.Location = new System.Drawing.Point(380, 54);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(102, 35);
-            this.button14.TabIndex = 77;
-            this.button14.Text = "Lưu";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnRepairClass.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepairClass.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnRepairClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRepairClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepairClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepairClass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepairClass.Location = new System.Drawing.Point(490, 6);
+            this.btnRepairClass.Name = "btnRepairClass";
+            this.btnRepairClass.Size = new System.Drawing.Size(102, 35);
+            this.btnRepairClass.TabIndex = 75;
+            this.btnRepairClass.Text = "Sửa";
+            this.btnRepairClass.UseVisualStyleBackColor = false;
+            this.btnRepairClass.Click += new System.EventHandler(this.btnRepairClass_Click);
             // 
-            // button2
+            // btnDlClass
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(490, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 35);
-            this.button2.TabIndex = 75;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDlClass.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDlClass.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnDlClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnDlClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDlClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDlClass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDlClass.Location = new System.Drawing.Point(490, 54);
+            this.btnDlClass.Name = "btnDlClass";
+            this.btnDlClass.Size = new System.Drawing.Size(102, 35);
+            this.btnDlClass.TabIndex = 74;
+            this.btnDlClass.Text = "Xóa";
+            this.btnDlClass.UseVisualStyleBackColor = false;
+            this.btnDlClass.Click += new System.EventHandler(this.btnDlClass_Click);
             // 
-            // button5
+            // btnAddClass
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(490, 54);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 35);
-            this.button5.TabIndex = 74;
-            this.button5.Text = "Xóa";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(380, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(102, 35);
-            this.button8.TabIndex = 73;
-            this.button8.Text = "Thêm";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnAddClass.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAddClass.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnAddClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddClass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAddClass.Location = new System.Drawing.Point(380, 6);
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(102, 35);
+            this.btnAddClass.TabIndex = 73;
+            this.btnAddClass.Text = "Thêm";
+            this.btnAddClass.UseVisualStyleBackColor = false;
+            this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click);
             // 
             // groupBox4
             // 
@@ -848,10 +723,9 @@
             // tpProducer
             // 
             this.tpProducer.Controls.Add(this.groupBox7);
-            this.tpProducer.Controls.Add(this.button9);
-            this.tpProducer.Controls.Add(this.button10);
-            this.tpProducer.Controls.Add(this.button11);
-            this.tpProducer.Controls.Add(this.button12);
+            this.tpProducer.Controls.Add(this.btnRepairSubject);
+            this.tpProducer.Controls.Add(this.btnDlSubject);
+            this.tpProducer.Controls.Add(this.btnAddSubject);
             this.tpProducer.Controls.Add(this.groupBox6);
             this.tpProducer.Location = new System.Drawing.Point(4, 25);
             this.tpProducer.Name = "tpProducer";
@@ -939,66 +813,53 @@
             this.txbSubjectName.Size = new System.Drawing.Size(115, 22);
             this.txbSubjectName.TabIndex = 8;
             // 
-            // button9
+            // btnRepairSubject
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button9.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button9.ForeColor = System.Drawing.Color.Green;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(380, 54);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(102, 35);
-            this.button9.TabIndex = 76;
-            this.button9.Text = "Lưu";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnRepairSubject.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRepairSubject.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnRepairSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRepairSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRepairSubject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepairSubject.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRepairSubject.Location = new System.Drawing.Point(490, 6);
+            this.btnRepairSubject.Name = "btnRepairSubject";
+            this.btnRepairSubject.Size = new System.Drawing.Size(102, 35);
+            this.btnRepairSubject.TabIndex = 75;
+            this.btnRepairSubject.Text = "Sửa";
+            this.btnRepairSubject.UseVisualStyleBackColor = false;
+            this.btnRepairSubject.Click += new System.EventHandler(this.btnRepairSubject_Click);
             // 
-            // button10
+            // btnDlSubject
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button10.Location = new System.Drawing.Point(490, 6);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(102, 35);
-            this.button10.TabIndex = 75;
-            this.button10.Text = "Sửa";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnDlSubject.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDlSubject.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnDlSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnDlSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDlSubject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDlSubject.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDlSubject.Location = new System.Drawing.Point(490, 54);
+            this.btnDlSubject.Name = "btnDlSubject";
+            this.btnDlSubject.Size = new System.Drawing.Size(102, 35);
+            this.btnDlSubject.TabIndex = 74;
+            this.btnDlSubject.Text = "Xóa";
+            this.btnDlSubject.UseVisualStyleBackColor = false;
+            this.btnDlSubject.Click += new System.EventHandler(this.btnDlSubject_Click);
             // 
-            // button11
+            // btnAddSubject
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button11.Location = new System.Drawing.Point(490, 54);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(102, 35);
-            this.button11.TabIndex = 74;
-            this.button11.Text = "Xóa";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button12.Location = new System.Drawing.Point(380, 6);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(102, 35);
-            this.button12.TabIndex = 73;
-            this.button12.Text = "Thêm";
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnAddSubject.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAddSubject.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
+            this.btnAddSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddSubject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddSubject.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAddSubject.Location = new System.Drawing.Point(380, 6);
+            this.btnAddSubject.Name = "btnAddSubject";
+            this.btnAddSubject.Size = new System.Drawing.Size(102, 35);
+            this.btnAddSubject.TabIndex = 73;
+            this.btnAddSubject.Text = "Thêm";
+            this.btnAddSubject.UseVisualStyleBackColor = false;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
             // 
             // groupBox6
             // 
@@ -1057,6 +918,54 @@
             this.cbShow.UseVisualStyleBackColor = true;
             this.cbShow.CheckedChanged += new System.EventHandler(this.cbShow_CheckedChanged);
             // 
+            // STUDENT_ID
+            // 
+            this.STUDENT_ID.DataPropertyName = "STUDENT_ID";
+            this.STUDENT_ID.HeaderText = "Mã sinh viên";
+            this.STUDENT_ID.Name = "STUDENT_ID";
+            // 
+            // STUDENT_NAME
+            // 
+            this.STUDENT_NAME.DataPropertyName = "STUDENT_NAME";
+            this.STUDENT_NAME.HeaderText = "Tên sinh viên";
+            this.STUDENT_NAME.Name = "STUDENT_NAME";
+            // 
+            // PHONE
+            // 
+            this.PHONE.DataPropertyName = "PHONE";
+            this.PHONE.HeaderText = "Số điện thoại";
+            this.PHONE.Name = "PHONE";
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
+            // 
+            // COURSE_ID
+            // 
+            this.COURSE_ID.DataPropertyName = "COURSE_ID";
+            this.COURSE_ID.HeaderText = "Mã khóa";
+            this.COURSE_ID.Name = "COURSE_ID";
+            // 
+            // CLASS_ID
+            // 
+            this.CLASS_ID.DataPropertyName = "CLASS_ID";
+            this.CLASS_ID.HeaderText = "Mã lớp";
+            this.CLASS_ID.Name = "CLASS_ID";
+            // 
+            // SUBJECT_ID
+            // 
+            this.SUBJECT_ID.DataPropertyName = "SUBJECT_ID";
+            this.SUBJECT_ID.HeaderText = "Mã môn";
+            this.SUBJECT_ID.Name = "SUBJECT_ID";
+            // 
+            // DATE_ADD
+            // 
+            this.DATE_ADD.DataPropertyName = "DATE_ADD";
+            this.DATE_ADD.HeaderText = "Ngày thêm vào";
+            this.DATE_ADD.Name = "DATE_ADD";
+            // 
             // frmReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1065,14 +974,11 @@
             this.ClientSize = new System.Drawing.Size(1197, 870);
             this.Controls.Add(this.cbShow);
             this.Controls.Add(this.tctReader);
-            this.Controls.Add(this.button13);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cbSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnRepair);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAddBook);
+            this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.grInforBook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReader";
@@ -1119,14 +1025,11 @@
         private System.Windows.Forms.TextBox txbStudentID;
         private System.Windows.Forms.TextBox txbStudentName;
         private System.Windows.Forms.TextBox txbEmail;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnRepair;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAddBook;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TabControl tctReader;
         private System.Windows.Forms.TabPage tp;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1134,10 +1037,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txbCourseID;
         private System.Windows.Forms.TextBox txbCourseName;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnRepairCourse;
+        private System.Windows.Forms.Button btnDlCourse;
+        private System.Windows.Forms.Button btnCourse;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvCourse;
         private System.Windows.Forms.TabPage tpClass;
@@ -1148,10 +1050,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbClassID;
         private System.Windows.Forms.TextBox txbClassName;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnRepairClass;
+        private System.Windows.Forms.Button btnDlClass;
+        private System.Windows.Forms.Button btnAddClass;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvClass;
         private System.Windows.Forms.TabPage tpProducer;
@@ -1163,10 +1064,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txbSubjectID;
         private System.Windows.Forms.TextBox txbSubjectName;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnRepairSubject;
+        private System.Windows.Forms.Button btnDlSubject;
+        private System.Windows.Forms.Button btnAddSubject;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dgvSubject;
         private System.Windows.Forms.CheckBox cbShow;
@@ -1188,15 +1088,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STUDENT_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STUDENT_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ADDRESS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COURSE_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLASS_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATE_ADD;
         private System.Windows.Forms.DataGridViewTextBoxColumn COURSE_ID_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn COURSE_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT_ID_2;
@@ -1207,6 +1098,14 @@
         private System.Windows.Forms.TextBox txbSubjectID_2;
         private System.Windows.Forms.TextBox txbClassID_2;
         private System.Windows.Forms.TextBox txbCourseID_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STUDENT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STUDENT_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COURSE_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLASS_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATE_ADD;
 
     }
 }
