@@ -14,80 +14,43 @@ namespace QLThuVien
 {
     public partial class frmBook : Form
     {
-        SqlConnection sqlConn;
-        SqlCommand sqlComm;
-        SqlCommand sqlCommType;
-        SqlCommand sqlCommAuthor;
-        SqlCommand sqlCommPulisher;
-        SqlDataAdapter sqlAdapter = new SqlDataAdapter();
-        DataTable dtTbBooks = new DataTable();
-        DataTable dtTbType = new DataTable();
-        DataTable dtTbAuthor = new DataTable();
-        DataTable dtTbPublisher = new DataTable();
-        
+
+        ConnectionString cnn = new ConnectionString();
+
         public frmBook()
         {
             InitializeComponent();
         }
 
-        public SqlConnection OpenConnect() {
-            sqlConn = new SqlConnection(ConnectionString.str);
-            if (sqlConn.State == ConnectionState.Closed)
-                sqlConn.Open();
-            return sqlConn;
-        }
-        public SqlConnection CloseConnect()
-        {
-            sqlConn = new SqlConnection(ConnectionString.str);
-            if (sqlConn.State == ConnectionState.Open)
-                sqlConn.Close();
-            return sqlConn;
-        }
         public void LoadDBBooks()
         {
-            sqlComm = sqlConn.CreateCommand();
-            sqlComm.CommandText = "SELECT * FROM BOOKS";
-            sqlAdapter.SelectCommand = sqlComm;
-            dtTbBooks.Clear();
-            sqlAdapter.Fill(dtTbBooks);
-            dgvBook.DataSource = dtTbBooks;
+            dgvBook.DataSource = cnn.LoadData("SELECT * FROM BOOKS");
         }
+        
         public void LoadDBType()
         {
-            sqlCommType = sqlConn.CreateCommand();
-            sqlCommType.CommandText = "SELECT TYPE_BOOK_ID, TYPE_BOOK_NAME FROM TYPE_BOOK";
-            dtTbType.Clear();
-            sqlAdapter.SelectCommand = sqlCommType;
-            sqlAdapter.Fill(dtTbType);
-            dgvTypeBook.DataSource = dtTbType;
+            dgvTypeBook.DataSource = cnn.LoadData("SELECT TYPE_BOOK_ID, TYPE_BOOK_NAME FROM TYPE_BOOK");
         }
         public void LoadDBAuthor()
         {
-            sqlCommAuthor = sqlConn.CreateCommand();
-            sqlCommAuthor.CommandText = "SELECT AUTHOR_ID, AUTHOR_NAME FROM AUTHOR";
-            dtTbAuthor.Clear();
-            sqlAdapter.SelectCommand = sqlCommAuthor;
-            sqlAdapter.Fill(dtTbAuthor);
-            dgvAuthor.DataSource = dtTbAuthor;
+            dgvAuthor.DataSource = cnn.LoadData("SELECT AUTHOR_ID, AUTHOR_NAME FROM AUTHOR");
         }
         public void LoadDPublisher()
         {
-            sqlCommPulisher = sqlConn.CreateCommand();
-            sqlCommPulisher.CommandText = "SELECT PUBLISHER_ID, PUBLISHER_NAME FROM PUBLISHER";
-            sqlAdapter.SelectCommand = sqlCommPulisher;
-            dtTbPublisher.Clear();
-            sqlAdapter.Fill(dtTbPublisher);
-            dgvPulisher.DataSource = dtTbPublisher;
+            dgvPulisher.DataSource = cnn.LoadData("SELECT PUBLISHER_ID, PUBLISHER_NAME FROM PUBLISHER");
         }
 
+        public void SearchBookByKeyWord()
+        {
+            dgvBook.DataSource = cnn.LoadData("SELECT * FROM BOOKS WHERE BOOK_NAME LIKE '%" + txbKeyWord.Text + "%'");
+        }
+        
         private void frmBook_Load(object sender, EventArgs e)
         {
-            OpenConnect();
-            LoadDBBooks();
             LoadDBType();
             LoadDBAuthor();
             LoadDPublisher();
-            CloseConnect();
+            LoadDBBooks();
         }
 
         private void cbShow_CheckedChanged(object sender, EventArgs e)
@@ -102,115 +65,105 @@ namespace QLThuVien
                 tctBook.Visible = true;
             }
         }
-
+        
         int i;
         private void dgvTypeBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbCategoryID.ReadOnly = true;
-            i = dgvTypeBook.CurrentRow.Index;
-            txbCategoryID.Text = dgvTypeBook.Rows[i].Cells[0].Value.ToString();
-            txbTypeBookID_2.Text = dgvTypeBook.Rows[i].Cells[0].Value.ToString();
-            txbCategoryName.Text = dgvTypeBook.Rows[i].Cells[1].Value.ToString();
+            try
+            {
+                txbCategoryID.ReadOnly = true;
+                i = dgvTypeBook.CurrentRow.Index;
+                txbCategoryID.Text = dgvTypeBook.Rows[i].Cells[0].Value.ToString();
+                txbTypeBookID_2.Text = dgvTypeBook.Rows[i].Cells[0].Value.ToString();
+                txbCategoryName.Text = dgvTypeBook.Rows[i].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi");
+            }
         }
         private void dgvPulisher_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbPublisherID.ReadOnly = true;
-            i = dgvPulisher.CurrentRow.Index;
-            txbPublisherID.Text = dgvPulisher.Rows[i].Cells[0].Value.ToString();
-            txbPublisherID_2.Text = dgvPulisher.Rows[i].Cells[0].Value.ToString();
-            txbPublisherName.Text = dgvPulisher.Rows[i].Cells[1].Value.ToString();
+            try
+            {
+                txbPublisherID.ReadOnly = true;
+                i = dgvPulisher.CurrentRow.Index;
+                txbPublisherID.Text = dgvPulisher.Rows[i].Cells[0].Value.ToString();
+                txbPublisherID_2.Text = dgvPulisher.Rows[i].Cells[0].Value.ToString();
+                txbPublisherName.Text = dgvPulisher.Rows[i].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi", "Datagridview Publisher");
+            }
         }
 
         private void dvgAuthor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbAuthorID.ReadOnly = true;
-            i = dgvAuthor.CurrentRow.Index;
-            txbAuthorID.Text = dgvAuthor.Rows[i].Cells[0].Value.ToString();
-            txbAuthorID_2.Text = dgvAuthor.Rows[i].Cells[0].Value.ToString();
-            txbAuthorName.Text = dgvAuthor.Rows[i].Cells[1].Value.ToString();
+            try
+            {
+                txbAuthorID.ReadOnly = true;
+                i = dgvAuthor.CurrentRow.Index;
+                txbAuthorID.Text = dgvAuthor.Rows[i].Cells[0].Value.ToString();
+                txbAuthorID_2.Text = dgvAuthor.Rows[i].Cells[0].Value.ToString();
+                txbAuthorName.Text = dgvAuthor.Rows[i].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi", "Datagridview Author");
+            }
         }
 
         private void dgvBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbBookID.ReadOnly = true;
-            i = dgvBook.CurrentRow.Index;
-            txbBookID.Text = dgvBook.Rows[i].Cells[0].Value.ToString();
-            txbBookName.Text = dgvBook.Rows[i].Cells[1].Value.ToString();
-            nmudQuantity.Text = dgvBook.Rows[i].Cells[2].Value.ToString();
-            txbUnitPrice.Text = dgvBook.Rows[i].Cells[3].Value.ToString();
-            txbTypeBookID_2.Text = dgvBook.Rows[i].Cells[4].Value.ToString();
-            txbAuthorID_2.Text = dgvBook.Rows[i].Cells[5].Value.ToString();
-            txbPublisherID_2.Text = dgvBook.Rows[i].Cells[6].Value.ToString();
-            dtpPublishingYear.Text = dgvBook.Rows[i].Cells[7].Value.ToString();
-            dtpDataReceipt.Text = dgvBook.Rows[i].Cells[8].Value.ToString();
+            try
+            {
+                txbBookID.ReadOnly = true;
+                i = dgvBook.CurrentRow.Index;
+                txbBookID.Text = dgvBook.Rows[i].Cells[0].Value.ToString();
+                txbBookName.Text = dgvBook.Rows[i].Cells[1].Value.ToString();
+                nmudQuantity.Text = dgvBook.Rows[i].Cells[2].Value.ToString();
+                txbUnitPrice.Text = dgvBook.Rows[i].Cells[3].Value.ToString();
+                txbTypeBookID_2.Text = dgvBook.Rows[i].Cells[4].Value.ToString();
+                txbAuthorID_2.Text = dgvBook.Rows[i].Cells[5].Value.ToString();
+                txbPublisherID_2.Text = dgvBook.Rows[i].Cells[6].Value.ToString();
+                dtpPublishingYear.Text = dgvBook.Rows[i].Cells[7].Value.ToString();
+                dtpDataReceipt.Text = dgvBook.Rows[i].Cells[8].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi", "Datagridview Book");
+            }
+
         }
         // BOOK FORM --- DANH MỤC SÁCH ---
         // Lỗi FK
         // FIX hoàn tất 2:30 AM - 27/06
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            OpenConnect();
-            try
-            {
-                sqlComm = sqlConn.CreateCommand();
-                sqlComm.CommandText =
-                    @"INSERT INTO BOOKS
-                        (BOOK_ID, BOOK_NAME, QUANTITY, UNIT_PRICE, TYPE_BOOK_ID, AUTHOR_ID, PUBLISHER_ID, PUBLISHING_YEAR, DATE_RECEIPT) 
-                    VALUES
-                        ('" + txbBookID.Text + "', '" + txbBookName.Text + "', '" + nmudQuantity.Text + "', '" + txbUnitPrice.Text + "', '" + txbTypeBookID_2.Text + "', '" + txbAuthorID_2.Text + "', '" + txbPublisherID_2.Text + "', '" + dtpPublishingYear.Text + "', '" + dtpDataReceipt.Text + "')";
-                sqlComm.ExecuteNonQuery();
-                LoadDBBooks();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi");
-            }
+            cnn.LoadData("INSERT INTO BOOKS(BOOK_ID, BOOK_NAME, QUANTITY, UNIT_PRICE, TYPE_BOOK_ID, AUTHOR_ID, PUBLISHER_ID, PUBLISHING_YEAR, DATE_RECEIPT) VALUES('" + txbBookID.Text + "', '" + txbBookName.Text + "', '" + nmudQuantity.Text + "', '" + txbUnitPrice.Text + "', '" + txbTypeBookID_2.Text + "', '" + txbAuthorID_2.Text + "', '" + txbPublisherID_2.Text + "', '" + dtpPublishingYear.Text + "', '" + dtpDataReceipt.Text + "')");
+            LoadDBBooks();
             ResetControlValues();
-            CloseConnect();
         }
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
-            OpenConnect();
-            try
-            {
-                sqlComm = sqlConn.CreateCommand();
-                sqlComm.CommandText = "DELETE FROM BOOKS WHERE BOOK_ID = '" + txbBookID.Text +"'";
-                sqlComm.ExecuteNonQuery();
-                LoadDBBooks();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi");
-            }
+            cnn.LoadData("DELETE FROM BOOKS WHERE BOOK_ID = '" + txbBookID.Text + "'");
+            LoadDBBooks();
+            txbBookID.ReadOnly = false;
             ResetControlValues();
-            CloseConnect();
         }
 
         private void btnRepair_Click(object sender, EventArgs e)
         {
-            OpenConnect();
-            try
-            {
-                sqlComm = sqlConn.CreateCommand();
-                sqlComm.CommandText = "UPDATE BOOKS SET  BOOK_NAME = '" + txbBookName.Text + "', QUANTITY = '" + nmudQuantity.Text + "', UNIT_PRICE = '" + txbUnitPrice.Text + "', TYPE_BOOK_ID = '" + txbTypeBookID_2.Text + "', AUTHOR_ID = '" + txbAuthorID_2.Text + "', PUBLISHER_ID = '" + txbPublisherID_2.Text + "', PUBLISHING_YEAR = '" + dtpPublishingYear.Text + "', DATE_RECEIPT = '" + dtpDataReceipt.Text + "' WHERE BOOK_ID ='"+ txbBookID +"' ";
-                sqlComm.ExecuteNonQuery();
-                LoadDBType();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi");
-            }
-            ResetControlValues();
-            CloseConnect();
+
+            cnn.LoadData("UPDATE BOOKS SET  BOOK_NAME = '" + txbBookName.Text + "', QUANTITY = '" + nmudQuantity.Text + "', UNIT_PRICE = '" + txbUnitPrice.Text + "', TYPE_BOOK_ID = '" + txbTypeBookID_2.Text + "', AUTHOR_ID = '" + txbAuthorID_2.Text + "', PUBLISHER_ID = '" + txbPublisherID_2.Text + "', PUBLISHING_YEAR = '" + dtpPublishingYear.Text + "', DATE_RECEIPT = '" + dtpDataReceipt.Text + "' WHERE BOOK_ID ='"+ txbBookID +"' ");
+            LoadDBBooks();
             txbBookID.ReadOnly = false;
+            ResetControlValues();
         }
 
         //đang kiểm tra
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
 
         void ResetControlValues()
         {
@@ -239,48 +192,36 @@ namespace QLThuVien
         //hoàn tất fix 3:34 PM - 27/06
         private void btnAddType_Click(object sender, EventArgs e)
         {
-            OpenConnect();
             try
             {
-                sqlCommType = sqlConn.CreateCommand();
-                sqlCommType.CommandText =
-                    @"INSERT INTO 
-                        TYPE_BOOK SET (TYPE_BOOK_ID, TYPE_BOOK_NAME) 
-                            VALUES ('" + txbCategoryID.Text + "', '" + txbCategoryName.Text + "')";
-                sqlCommType.ExecuteNonQuery();
+                cnn.OpenConnect();
+                cnn.LoadData("INSERT INTO TYPE_BOOK SET (TYPE_BOOK_ID, TYPE_BOOK_NAME) VALUES ('" + txbCategoryID.Text + "', '" + txbCategoryName.Text + "')");
                 LoadDBType();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi");
-                //MessageBox.Show (sqlCommType.CommandText.ToString ());
+                MessageBox.Show ("","Ero");
             }
             ResetControlValues();
-            CloseConnect();
         }
         private void btnRepairType_Click(object sender, EventArgs e)
         {
-            OpenConnect();
+
             try
             {
-                sqlCommType = sqlConn.CreateCommand();
-                sqlCommType.CommandText =
-                    @"UPDATE TYPE_BOOK 
-                        SET TYPE_BOOK_NAME = '" + txbCategoryName.Text + "' WHERE TYPE_BOOK_ID = '" + txbCategoryID.Text + "'";
-                sqlCommType.ExecuteNonQuery();
+                cnn.OpenConnect();
+                cnn.LoadData("UPDATE TYPE_BOOK SET TYPE_BOOK_NAME = '" + txbCategoryName.Text + "' WHERE TYPE_BOOK_ID = '" + txbCategoryID.Text + "'");
                 LoadDBType();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi");
+                MessageBox.Show("", "Ero");
             }
             ResetControlValues();
-            txbCategoryID.ReadOnly = false;
-            CloseConnect();
         }
 
         private void btnDeleteType_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try 
             {
@@ -294,7 +235,7 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnSearchType_Click(object sender, EventArgs e)
@@ -318,7 +259,7 @@ namespace QLThuVien
 
         // --- AUTHOR --
         private void btnAddAuthor_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -332,11 +273,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnRepairAuthor_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -351,11 +292,11 @@ namespace QLThuVien
             }
             ResetControlValues();
             txbAuthorID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnDeleteAuthor_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -369,7 +310,7 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnSearchAuthor_Click(object sender, EventArgs e)
@@ -379,7 +320,7 @@ namespace QLThuVien
 
         // --- PUBLISHER ---
         private void btnAddPublisher_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -393,11 +334,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnRepairPublisher_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -412,11 +353,11 @@ namespace QLThuVien
             }
             ResetControlValues();
             txbPublisherID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnDeletePublisher_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -431,9 +372,34 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
+        private void btnSearchBook_Click(object sender, EventArgs e)
+        {
+            SearchBookByKeyWord();
+        }
 
+        private void txbKeyWord_TextChanged(object sender, EventArgs e)
+        {
+            SearchBookByKeyWord();
+        }
+
+        private void frmBook_Click(object sender, EventArgs e)
+        {
+            txbBookID.ReadOnly = false;
+            txbAuthorID.ReadOnly = false;
+            txbPublisherID.ReadOnly = false;
+            txbCategoryID.ReadOnly = false;
+        }
+
+        private void tctBook_Click(object sender, EventArgs e)
+        {
+            txbAuthorID.ReadOnly = false;
+            txbPublisherID.ReadOnly = false;
+            txbCategoryID.ReadOnly = false;
+        }
+
+    
     }
 }

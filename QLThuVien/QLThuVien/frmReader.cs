@@ -13,73 +13,34 @@ namespace QLThuVien
 {
     public partial class frmReader : Form
     {
-        SqlConnection sqlConn;
-        SqlCommand sqlCommStudent;
-        SqlCommand sqlCommcourse;
-        SqlCommand sqlCommClass;
-        SqlCommand sqlCommSubject;
-        SqlDataAdapter sqlAdapter = new SqlDataAdapter();
-        DataTable dtTbStudent = new DataTable();
-        DataTable dtTbCourse = new DataTable();
-        DataTable dtTbClass = new DataTable();
-        DataTable dtTbSubject = new DataTable();
+
+        ConnectionString cnn = new ConnectionString();
+
         public frmReader()
         {
             InitializeComponent();
         }
 
-
-        public SqlConnection OpenConnect()
-        {
-            sqlConn = new SqlConnection(ConnectionString.str);
-            if (sqlConn.State == ConnectionState.Closed)
-                sqlConn.Open();
-            return sqlConn;
-        }
-        public SqlConnection CloseConnect()
-        {
-            sqlConn = new SqlConnection(ConnectionString.str);
-            if (sqlConn.State == ConnectionState.Open)
-                sqlConn.Close();
-            return sqlConn;
-        }
-
-
         public void LoadDBStudent()
         {
-            sqlCommStudent = sqlConn.CreateCommand();
-            sqlCommStudent.CommandText = "SELECT STUDENT_ID, STUDENT_NAME, PHONE, EMAIL, COURSE_ID, CLASS_ID, SUBJECT_ID, DATE_ADD FROM STUDENT";
-            sqlAdapter.SelectCommand = sqlCommStudent;
-            dtTbStudent.Clear();
-            sqlAdapter.Fill(dtTbStudent);
-            dgvStudent.DataSource = dtTbStudent;
+            dgvStudent.DataSource = cnn.LoadData("SELECT STUDENT_ID, STUDENT_NAME, PHONE, EMAIL, COURSE_ID, CLASS_ID, SUBJECT_ID, DATE_ADD FROM STUDENT");
         }
         public void LoadDBCourse()
         {
-            sqlCommcourse = sqlConn.CreateCommand();
-            sqlCommcourse.CommandText = "SELECT COURSE_ID, COURSE_NAME FROM COURSE";
-            dtTbCourse.Clear();
-            sqlAdapter.SelectCommand = sqlCommcourse;
-            sqlAdapter.Fill(dtTbCourse);
-            dgvCourse.DataSource = dtTbCourse;
+            dgvCourse.DataSource = cnn.LoadData("SELECT COURSE_ID, COURSE_NAME FROM COURSE");
         }
         public void LoadDBClass()
         {
-            sqlCommClass = sqlConn.CreateCommand();
-            sqlCommClass.CommandText = "SELECT CLASS_ID, CLASS_NAME, CLASS_PRESIDENT FROM CLASS";
-            dtTbClass.Clear();
-            sqlAdapter.SelectCommand = sqlCommClass;
-            sqlAdapter.Fill(dtTbClass);
-            dgvClass.DataSource = dtTbClass;
+            dgvClass.DataSource = cnn.LoadData("SELECT CLASS_ID, CLASS_NAME, CLASS_PRESIDENT FROM CLASS");
         }
         public void LoadDSubject()
         {
-            sqlCommSubject = sqlConn.CreateCommand();
-            sqlCommSubject.CommandText = "SELECT SUBJECT_ID, SUBJECT_NAME FROM SUBJECT";
-            sqlAdapter.SelectCommand = sqlCommSubject;
-            dtTbSubject.Clear();
-            sqlAdapter.Fill(dtTbSubject);
-            dgvSubject.DataSource = dtTbSubject;
+            dgvSubject.DataSource = cnn.LoadData("SELECT SUBJECT_ID, SUBJECT_NAME FROM SUBJECT");
+        }
+
+        public void SearchBookByKeyWord()
+        {
+            dgvStudent.DataSource = cnn.LoadData("SELECT * FROM STUDENT WHERE STUDENT_NAME LIKE '%" + txbKeyWord.Text + "%'");
         }
 
         private void cbShow_CheckedChanged(object sender, EventArgs e)
@@ -93,17 +54,15 @@ namespace QLThuVien
                 tctReader.Visible = true;
             }
         }
-
+        
         private void frmReader_Load(object sender, EventArgs e)
         {
-            OpenConnect();
             LoadDBStudent();
             LoadDBCourse();
             LoadDBClass();
             LoadDSubject();
-            CloseConnect();
         }
-
+        
         int i;
         private void dgvSubject_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -147,7 +106,7 @@ namespace QLThuVien
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -165,11 +124,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -184,11 +143,11 @@ namespace QLThuVien
             }
             txbStudentID.ReadOnly = false;
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnRepair_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -203,7 +162,7 @@ namespace QLThuVien
             }
             txbStudentID.ReadOnly = false;
             ResetControlValues();
-            CloseConnect();
+            CloseConnect();*/
         }
 
         void ResetControlValues()
@@ -230,7 +189,7 @@ namespace QLThuVien
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -244,11 +203,11 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnRepairCourse_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -262,11 +221,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             txbCourseID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnDlCourse_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -280,11 +239,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             txbCourseID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnAddClass_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -297,11 +256,11 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnRepairClass_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -315,11 +274,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             txbClassID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnDlClass_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -333,11 +292,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             txbClassID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnAddSubject_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -350,11 +309,11 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi");
             }
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnRepairSubject_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -368,11 +327,11 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             txbSubjectID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
         }
 
         private void btnDlSubject_Click(object sender, EventArgs e)
-        {
+        {/*
             OpenConnect();
             try
             {
@@ -386,7 +345,17 @@ namespace QLThuVien
                 MessageBox.Show("Lỗi");
             }
             txbSubjectID.ReadOnly = false;
-            CloseConnect();
+            CloseConnect();*/
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchBookByKeyWord();
+        }
+
+        private void txbKeyWord_TextChanged(object sender, EventArgs e)
+        {
+            SearchBookByKeyWord();
         }
     }
 }

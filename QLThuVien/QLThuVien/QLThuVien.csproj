@@ -102,6 +102,11 @@
     <Compile Include="frmReader.Designer.cs">
       <DependentUpon>frmReader.cs</DependentUpon>
     </Compile>
+    <Compile Include="LIBRARYMANGAEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LIBRARYMANGAEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report.cs">
@@ -137,6 +142,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="LIBRARYMANGAEDataSet.xsc">
+      <DependentUpon>LIBRARYMANGAEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LIBRARYMANGAEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LIBRARYMANGAEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LIBRARYMANGAEDataSet.xss">
+      <DependentUpon>LIBRARYMANGAEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

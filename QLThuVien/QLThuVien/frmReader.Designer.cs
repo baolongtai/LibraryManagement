@@ -50,6 +50,14 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.STUDENT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STUDENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COURSE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLASS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUBJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_ADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tctReader = new System.Windows.Forms.TabControl();
             this.tp = new System.Windows.Forms.TabPage();
@@ -99,14 +107,8 @@
             this.SUBJECT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbShow = new System.Windows.Forms.CheckBox();
-            this.STUDENT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STUDENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COURSE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLASS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUBJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_ADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearchReader = new System.Windows.Forms.Button();
+            this.txbKeyWord = new System.Windows.Forms.TextBox();
             this.grInforBook.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -370,6 +372,54 @@
             this.dgvStudent.RowTemplate.Height = 24;
             this.dgvStudent.Size = new System.Drawing.Size(1175, 443);
             this.dgvStudent.TabIndex = 0;
+            // 
+            // STUDENT_ID
+            // 
+            this.STUDENT_ID.DataPropertyName = "STUDENT_ID";
+            this.STUDENT_ID.HeaderText = "Mã sinh viên";
+            this.STUDENT_ID.Name = "STUDENT_ID";
+            // 
+            // STUDENT_NAME
+            // 
+            this.STUDENT_NAME.DataPropertyName = "STUDENT_NAME";
+            this.STUDENT_NAME.HeaderText = "Tên sinh viên";
+            this.STUDENT_NAME.Name = "STUDENT_NAME";
+            // 
+            // PHONE
+            // 
+            this.PHONE.DataPropertyName = "PHONE";
+            this.PHONE.HeaderText = "Số điện thoại";
+            this.PHONE.Name = "PHONE";
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
+            // 
+            // COURSE_ID
+            // 
+            this.COURSE_ID.DataPropertyName = "COURSE_ID";
+            this.COURSE_ID.HeaderText = "Mã khóa";
+            this.COURSE_ID.Name = "COURSE_ID";
+            // 
+            // CLASS_ID
+            // 
+            this.CLASS_ID.DataPropertyName = "CLASS_ID";
+            this.CLASS_ID.HeaderText = "Mã lớp";
+            this.CLASS_ID.Name = "CLASS_ID";
+            // 
+            // SUBJECT_ID
+            // 
+            this.SUBJECT_ID.DataPropertyName = "SUBJECT_ID";
+            this.SUBJECT_ID.HeaderText = "Mã môn";
+            this.SUBJECT_ID.Name = "SUBJECT_ID";
+            // 
+            // DATE_ADD
+            // 
+            this.DATE_ADD.DataPropertyName = "DATE_ADD";
+            this.DATE_ADD.HeaderText = "Ngày thêm vào";
+            this.DATE_ADD.Name = "DATE_ADD";
             // 
             // label1
             // 
@@ -918,53 +968,24 @@
             this.cbShow.UseVisualStyleBackColor = true;
             this.cbShow.CheckedChanged += new System.EventHandler(this.cbShow_CheckedChanged);
             // 
-            // STUDENT_ID
+            // btnSearchReader
             // 
-            this.STUDENT_ID.DataPropertyName = "STUDENT_ID";
-            this.STUDENT_ID.HeaderText = "Mã sinh viên";
-            this.STUDENT_ID.Name = "STUDENT_ID";
+            this.btnSearchReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchReader.Location = new System.Drawing.Point(175, 359);
+            this.btnSearchReader.Name = "btnSearchReader";
+            this.btnSearchReader.Size = new System.Drawing.Size(102, 28);
+            this.btnSearchReader.TabIndex = 73;
+            this.btnSearchReader.Text = "Tìm kiếm";
+            this.btnSearchReader.UseVisualStyleBackColor = true;
+            this.btnSearchReader.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // STUDENT_NAME
+            // txbKeyWord
             // 
-            this.STUDENT_NAME.DataPropertyName = "STUDENT_NAME";
-            this.STUDENT_NAME.HeaderText = "Tên sinh viên";
-            this.STUDENT_NAME.Name = "STUDENT_NAME";
-            // 
-            // PHONE
-            // 
-            this.PHONE.DataPropertyName = "PHONE";
-            this.PHONE.HeaderText = "Số điện thoại";
-            this.PHONE.Name = "PHONE";
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.DataPropertyName = "EMAIL";
-            this.EMAIL.HeaderText = "Email";
-            this.EMAIL.Name = "EMAIL";
-            // 
-            // COURSE_ID
-            // 
-            this.COURSE_ID.DataPropertyName = "COURSE_ID";
-            this.COURSE_ID.HeaderText = "Mã khóa";
-            this.COURSE_ID.Name = "COURSE_ID";
-            // 
-            // CLASS_ID
-            // 
-            this.CLASS_ID.DataPropertyName = "CLASS_ID";
-            this.CLASS_ID.HeaderText = "Mã lớp";
-            this.CLASS_ID.Name = "CLASS_ID";
-            // 
-            // SUBJECT_ID
-            // 
-            this.SUBJECT_ID.DataPropertyName = "SUBJECT_ID";
-            this.SUBJECT_ID.HeaderText = "Mã môn";
-            this.SUBJECT_ID.Name = "SUBJECT_ID";
-            // 
-            // DATE_ADD
-            // 
-            this.DATE_ADD.DataPropertyName = "DATE_ADD";
-            this.DATE_ADD.HeaderText = "Ngày thêm vào";
-            this.DATE_ADD.Name = "DATE_ADD";
+            this.txbKeyWord.Location = new System.Drawing.Point(7, 363);
+            this.txbKeyWord.Name = "txbKeyWord";
+            this.txbKeyWord.Size = new System.Drawing.Size(155, 22);
+            this.txbKeyWord.TabIndex = 74;
+            this.txbKeyWord.TextChanged += new System.EventHandler(this.txbKeyWord_TextChanged);
             // 
             // frmReader
             // 
@@ -972,6 +993,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1197, 870);
+            this.Controls.Add(this.txbKeyWord);
+            this.Controls.Add(this.btnSearchReader);
             this.Controls.Add(this.cbShow);
             this.Controls.Add(this.tctReader);
             this.Controls.Add(this.groupBox3);
@@ -1106,6 +1129,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CLASS_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE_ADD;
+        private System.Windows.Forms.Button btnSearchReader;
+        private System.Windows.Forms.TextBox txbKeyWord;
 
     }
 }

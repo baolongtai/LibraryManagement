@@ -30,15 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBook));
             this.dgvBook = new System.Windows.Forms.DataGridView();
-            this.BOOK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UNIT_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PUBLISHING_YEAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_RECEIPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpPublishingYear = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRepair = new System.Windows.Forms.Button();
@@ -106,6 +97,17 @@
             this.txbCategoryName = new System.Windows.Forms.TextBox();
             this.tctBook = new System.Windows.Forms.TabControl();
             this.cbShow = new System.Windows.Forms.CheckBox();
+            this.txbKeyWord = new System.Windows.Forms.TextBox();
+            this.btnSearchBook = new System.Windows.Forms.Button();
+            this.BOOK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UNIT_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PUBLISHING_YEAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_RECEIPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.grInforBook.SuspendLayout();
@@ -146,60 +148,6 @@
             this.dgvBook.Size = new System.Drawing.Size(1175, 443);
             this.dgvBook.TabIndex = 0;
             this.dgvBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellContentClick);
-            // 
-            // BOOK_ID
-            // 
-            this.BOOK_ID.DataPropertyName = "BOOK_ID";
-            this.BOOK_ID.HeaderText = "Mã sách";
-            this.BOOK_ID.Name = "BOOK_ID";
-            // 
-            // BOOK_NAME
-            // 
-            this.BOOK_NAME.DataPropertyName = "BOOK_NAME";
-            this.BOOK_NAME.HeaderText = "Tên sách";
-            this.BOOK_NAME.Name = "BOOK_NAME";
-            // 
-            // QUANTITY
-            // 
-            this.QUANTITY.DataPropertyName = "QUANTITY";
-            this.QUANTITY.HeaderText = "Số lượng";
-            this.QUANTITY.Name = "QUANTITY";
-            // 
-            // UNIT_PRICE
-            // 
-            this.UNIT_PRICE.DataPropertyName = "UNIT_PRICE";
-            this.UNIT_PRICE.HeaderText = "Đơn giá";
-            this.UNIT_PRICE.Name = "UNIT_PRICE";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TYPE_BOOK_ID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mã loại sách";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "AUTHOR_ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã tác giả";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PUBLISHER_ID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Mã nhà sản xuất";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // PUBLISHING_YEAR
-            // 
-            this.PUBLISHING_YEAR.DataPropertyName = "PUBLISHING_YEAR";
-            this.PUBLISHING_YEAR.HeaderText = "Năm sản xuất";
-            this.PUBLISHING_YEAR.Name = "PUBLISHING_YEAR";
-            // 
-            // DATE_RECEIPT
-            // 
-            this.DATE_RECEIPT.DataPropertyName = "DATE_RECEIPT";
-            this.DATE_RECEIPT.HeaderText = "Ngày nhập";
-            this.DATE_RECEIPT.Name = "DATE_RECEIPT";
             // 
             // dtpPublishingYear
             // 
@@ -870,6 +818,7 @@
             // 
             // dgvTypeBook
             // 
+            this.dgvTypeBook.AllowUserToOrderColumns = true;
             this.dgvTypeBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTypeBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTypeBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -955,6 +904,7 @@
             this.tctBook.SelectedIndex = 0;
             this.tctBook.Size = new System.Drawing.Size(606, 379);
             this.tctBook.TabIndex = 10;
+            this.tctBook.Click += new System.EventHandler(this.tctBook_Click);
             // 
             // cbShow
             // 
@@ -967,6 +917,79 @@
             this.cbShow.UseVisualStyleBackColor = true;
             this.cbShow.CheckedChanged += new System.EventHandler(this.cbShow_CheckedChanged);
             // 
+            // txbKeyWord
+            // 
+            this.txbKeyWord.Location = new System.Drawing.Point(12, 374);
+            this.txbKeyWord.Name = "txbKeyWord";
+            this.txbKeyWord.Size = new System.Drawing.Size(155, 22);
+            this.txbKeyWord.TabIndex = 76;
+            this.txbKeyWord.TextChanged += new System.EventHandler(this.txbKeyWord_TextChanged);
+            // 
+            // btnSearchBook
+            // 
+            this.btnSearchBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchBook.Location = new System.Drawing.Point(180, 370);
+            this.btnSearchBook.Name = "btnSearchBook";
+            this.btnSearchBook.Size = new System.Drawing.Size(102, 28);
+            this.btnSearchBook.TabIndex = 75;
+            this.btnSearchBook.Text = "Tìm kiếm";
+            this.btnSearchBook.UseVisualStyleBackColor = true;
+            this.btnSearchBook.Click += new System.EventHandler(this.btnSearchBook_Click);
+            // 
+            // BOOK_ID
+            // 
+            this.BOOK_ID.DataPropertyName = "BOOK_ID";
+            this.BOOK_ID.HeaderText = "Mã sách";
+            this.BOOK_ID.Name = "BOOK_ID";
+            // 
+            // BOOK_NAME
+            // 
+            this.BOOK_NAME.DataPropertyName = "BOOK_NAME";
+            this.BOOK_NAME.HeaderText = "Tên sách";
+            this.BOOK_NAME.Name = "BOOK_NAME";
+            // 
+            // QUANTITY
+            // 
+            this.QUANTITY.DataPropertyName = "QUANTITY";
+            this.QUANTITY.HeaderText = "Số lượng";
+            this.QUANTITY.Name = "QUANTITY";
+            // 
+            // UNIT_PRICE
+            // 
+            this.UNIT_PRICE.DataPropertyName = "UNIT_PRICE";
+            this.UNIT_PRICE.HeaderText = "Đơn giá";
+            this.UNIT_PRICE.Name = "UNIT_PRICE";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TYPE_BOOK_ID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã loại sách";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "AUTHOR_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã tác giả";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PUBLISHER_ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Mã nhà sản xuất";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // PUBLISHING_YEAR
+            // 
+            this.PUBLISHING_YEAR.DataPropertyName = "PUBLISHING_YEAR";
+            this.PUBLISHING_YEAR.HeaderText = "Năm sản xuất";
+            this.PUBLISHING_YEAR.Name = "PUBLISHING_YEAR";
+            // 
+            // DATE_RECEIPT
+            // 
+            this.DATE_RECEIPT.DataPropertyName = "DATE_RECEIPT";
+            this.DATE_RECEIPT.HeaderText = "Ngày nhập";
+            this.DATE_RECEIPT.Name = "DATE_RECEIPT";
+            // 
             // frmBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -974,6 +997,8 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1197, 870);
+            this.Controls.Add(this.txbKeyWord);
+            this.Controls.Add(this.btnSearchBook);
             this.Controls.Add(this.cbShow);
             this.Controls.Add(this.tctBook);
             this.Controls.Add(this.label12);
@@ -988,6 +1013,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sách";
             this.Load += new System.EventHandler(this.frmBook_Load);
+            this.Click += new System.EventHandler(this.frmBook_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.grInforBook.ResumeLayout(false);
@@ -1093,6 +1119,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_BOOK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_NAME;
+        private System.Windows.Forms.TextBox txbKeyWord;
+        private System.Windows.Forms.Button btnSearchBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
