@@ -109,6 +109,9 @@
             this.cbShow = new System.Windows.Forms.CheckBox();
             this.btnSearchReader = new System.Windows.Forms.Button();
             this.txbKeyWord = new System.Windows.Forms.TextBox();
+            this.btnSearch1 = new System.Windows.Forms.Button();
+            this.btnSearch2 = new System.Windows.Forms.Button();
+            this.search3 = new System.Windows.Forms.Button();
             this.grInforBook.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -447,6 +450,7 @@
             // tp
             // 
             this.tp.BackColor = System.Drawing.Color.LightBlue;
+            this.tp.Controls.Add(this.btnSearch1);
             this.tp.Controls.Add(this.groupBox2);
             this.tp.Controls.Add(this.btnRepairCourse);
             this.tp.Controls.Add(this.btnDlCourse);
@@ -506,6 +510,7 @@
             this.txbCourseName.Name = "txbCourseName";
             this.txbCourseName.Size = new System.Drawing.Size(102, 22);
             this.txbCourseName.TabIndex = 8;
+            this.txbCourseName.TextChanged += new System.EventHandler(this.txbCourseName_TextChanged);
             // 
             // btnRepairCourse
             // 
@@ -597,6 +602,7 @@
             // tpClass
             // 
             this.tpClass.BackColor = System.Drawing.Color.LightCyan;
+            this.tpClass.Controls.Add(this.btnSearch2);
             this.tpClass.Controls.Add(this.groupBox5);
             this.tpClass.Controls.Add(this.btnRepairClass);
             this.tpClass.Controls.Add(this.btnDlClass);
@@ -675,6 +681,7 @@
             this.txbClassName.Name = "txbClassName";
             this.txbClassName.Size = new System.Drawing.Size(94, 22);
             this.txbClassName.TabIndex = 8;
+            this.txbClassName.TextChanged += new System.EventHandler(this.txbClassName_TextChanged);
             // 
             // btnRepairClass
             // 
@@ -772,6 +779,7 @@
             // 
             // tpProducer
             // 
+            this.tpProducer.Controls.Add(this.search3);
             this.tpProducer.Controls.Add(this.groupBox7);
             this.tpProducer.Controls.Add(this.btnRepairSubject);
             this.tpProducer.Controls.Add(this.btnDlSubject);
@@ -862,6 +870,7 @@
             this.txbSubjectName.Name = "txbSubjectName";
             this.txbSubjectName.Size = new System.Drawing.Size(115, 22);
             this.txbSubjectName.TabIndex = 8;
+            this.txbSubjectName.TextChanged += new System.EventHandler(this.txbSubjectName_TextChanged);
             // 
             // btnRepairSubject
             // 
@@ -986,6 +995,39 @@
             this.txbKeyWord.Size = new System.Drawing.Size(155, 22);
             this.txbKeyWord.TabIndex = 74;
             this.txbKeyWord.TextChanged += new System.EventHandler(this.txbKeyWord_TextChanged);
+            // 
+            // btnSearch1
+            // 
+            this.btnSearch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch1.Location = new System.Drawing.Point(380, 52);
+            this.btnSearch1.Name = "btnSearch1";
+            this.btnSearch1.Size = new System.Drawing.Size(102, 38);
+            this.btnSearch1.TabIndex = 74;
+            this.btnSearch1.Text = "Tìm kiếm";
+            this.btnSearch1.UseVisualStyleBackColor = true;
+            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
+            // 
+            // btnSearch2
+            // 
+            this.btnSearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch2.Location = new System.Drawing.Point(380, 54);
+            this.btnSearch2.Name = "btnSearch2";
+            this.btnSearch2.Size = new System.Drawing.Size(102, 36);
+            this.btnSearch2.TabIndex = 79;
+            this.btnSearch2.Text = "Tìm kiếm";
+            this.btnSearch2.UseVisualStyleBackColor = true;
+            this.btnSearch2.Click += new System.EventHandler(this.btnSearch2_Click);
+            // 
+            // search3
+            // 
+            this.search3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search3.Location = new System.Drawing.Point(380, 54);
+            this.search3.Name = "search3";
+            this.search3.Size = new System.Drawing.Size(102, 36);
+            this.search3.TabIndex = 80;
+            this.search3.Text = "Tìm kiếm";
+            this.search3.UseVisualStyleBackColor = true;
+            this.search3.Click += new System.EventHandler(this.search3_Click);
             // 
             // frmReader
             // 
@@ -1131,6 +1173,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE_ADD;
         private System.Windows.Forms.Button btnSearchReader;
         private System.Windows.Forms.TextBox txbKeyWord;
+        private System.Windows.Forms.Button btnSearch1;
+        private System.Windows.Forms.Button btnSearch2;
+        private System.Windows.Forms.Button search3;
 
     }
 }

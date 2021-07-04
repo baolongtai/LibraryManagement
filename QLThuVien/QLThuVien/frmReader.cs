@@ -38,9 +38,21 @@ namespace QLThuVien
             dgvSubject.DataSource = cnn.LoadData("SELECT SUBJECT_ID, SUBJECT_NAME FROM SUBJECT");
         }
 
-        public void SearchBookByKeyWord()
+        public void SearchStudentByKeyWord()
         {
             dgvStudent.DataSource = cnn.LoadData("SELECT * FROM STUDENT WHERE STUDENT_NAME LIKE '%" + txbKeyWord.Text + "%'");
+        }
+        public void SearchCoursebyKeyWord()
+        {
+            dgvCourse.DataSource = cnn.LoadData("SELECT * FROM COURSE_NAME LIKE '%" + txbCourseName.Text + "%'");
+        }
+        public void SearchClassbyKeyWord()
+        {
+            dgvClass.DataSource = cnn.LoadData("SELECT * FROM CLASS_NAME LIKE '%" + txbClassName.Text + "%'");
+        }
+        public void SearchSubjectbyKeyWord()
+        {
+            dgvSubject.DataSource = cnn.LoadData("SELECT * FROM SUBJECT_NAME LIKE '%" + txbSubjectName.Text + "%'");
         }
 
         private void cbShow_CheckedChanged(object sender, EventArgs e)
@@ -106,63 +118,49 @@ namespace QLThuVien
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommStudent = sqlConn.CreateCommand();
-                sqlCommStudent.CommandText =
-                    @"INSERT INTO STUDENT
-                        (STUDENT_ID, STUDENT_NAME, PHONE, EMAIL, COURSE_ID, CLASS_ID, SUBJECT_ID, DATE_ADD) 
-                    VALUES
-                        ('" + txbStudentID.Text + "', '" + txbStudentName.Text + "', '" + txtPhone.Text + "', '" + txbEmail.Text + "', '" + txbCourseID_2.Text + "', '" + txbClassID_2.Text + "', '" + txbSubjectID_2.Text + "', '" + dtpDateAdd.Text + "')";
-                sqlCommStudent.ExecuteNonQuery();
+                cnn.LoadData("INSERT INTO STUDENT (STUDENT_ID, STUDENT_NAME, PHONE, EMAIL, COURSE_ID, CLASS_ID, SUBJECT_ID, DATE_ADD) VALUES('" + txbStudentID.Text + "', '" + txbStudentName.Text + "', '" + txtPhone.Text + "', '" + txbEmail.Text + "', '" + txbCourseID_2.Text + "', '" + txbClassID_2.Text + "', '" + txbSubjectID_2.Text + "', '" + dtpDateAdd.Text + "')");
                 LoadDBStudent();
+                ResetControlValues();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
             ResetControlValues();
-            CloseConnect();*/
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommStudent = sqlConn.CreateCommand();
-                sqlCommStudent.CommandText = "DELETE FROM STUDENT WHERE STUDENT_ID = '" + txbStudentID.Text + "'";
-                sqlCommStudent.ExecuteNonQuery();
+            cnn.LoadData("DELETE FROM STUDENT WHERE STUDENT_ID = '" + txbStudentID.Text + "'");
+            txbStudentID.ReadOnly = false;
+            LoadDBStudent();
+            ResetControlValues();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi");
+            }
+            ResetControlValues();
+        }
+
+        private void btnRepair_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cnn.LoadData("UPDATE STUDENT SET  STUDENT_NAME = '" + txbStudentName.Text + "', QUANTITY = '" + txtPhone.Text + "', UNIT_PRICE = '" + txbEmail.Text + "', TYPE_BOOK_ID = '" + txbCourseID_2.Text + "', AUTHOR_ID = '" + txbClassID_2.Text + "', PUBLISHER_ID = '" + txbSubjectID_2.Text + "', PUBLISHING_YEAR = '" + dtpDateAdd.Text + "' WHERE BOOK_ID ='" + txbStudentID + "' ");
+                txbStudentID.ReadOnly = false;
                 LoadDBStudent();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            txbStudentID.ReadOnly = false;
             ResetControlValues();
-            CloseConnect();*/
-        }
-
-        private void btnRepair_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
-            try
-            {
-                sqlCommStudent = sqlConn.CreateCommand();
-                sqlCommStudent.CommandText = "UPDATE STUDENT SET  STUDENT_NAME = '" + txbStudentName.Text + "', QUANTITY = '" + txtPhone.Text + "', UNIT_PRICE = '" + txbEmail.Text + "', TYPE_BOOK_ID = '" + txbCourseID_2.Text + "', AUTHOR_ID = '" + txbClassID_2.Text + "', PUBLISHER_ID = '" + txbSubjectID_2.Text + "', PUBLISHING_YEAR = '" + dtpDateAdd.Text + "' WHERE BOOK_ID ='" + txbStudentID + "' ";
-                sqlCommStudent.ExecuteNonQuery();
-                LoadDBCourse();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi");
-            }
-            txbStudentID.ReadOnly = false;
-            ResetControlValues();
-            CloseConnect();*/
         }
 
         void ResetControlValues()
@@ -189,173 +187,176 @@ namespace QLThuVien
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommcourse = sqlConn.CreateCommand();
-                sqlCommcourse.CommandText =
-                    @"INSERT INTO COURSE SET (COURSE_ID, COURSE_NAME) VALUES ('" + txbCourseID.Text + "', '" + txbCourseName.Text + "')";
-                sqlCommcourse.ExecuteNonQuery();
-                LoadDBCourse();
+            cnn.LoadData("INSERT INTO COURSE SET (COURSE_ID, COURSE_NAME) VALUES ('" + txbCourseID.Text + "', '" + txbCourseName.Text + "')");
+            LoadDBCourse();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnRepairCourse_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommcourse = sqlConn.CreateCommand();
-                sqlCommcourse.CommandText = @"UPDATE COURSE SET COURSE_NAME = '" + txbCourseName.Text + "' WHERE COURSE_ID = '" + txbCourseID.Text + "'";
-                sqlCommcourse.ExecuteNonQuery();
+                cnn.LoadData("UPDATE COURSE SET COURSE_NAME = '" + txbCourseName.Text + "' WHERE COURSE_ID = '" + txbCourseID.Text + "'");
+                txbCourseID.ReadOnly = false;
                 LoadDBCourse();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            txbCourseID.ReadOnly = false;
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnDlCourse_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommcourse = sqlConn.CreateCommand();
-                sqlCommcourse.CommandText = "DELETE FROM COURSE WHERE COURSE_ID = '" + txbCourseID.Text + "'";
-                sqlCommcourse.ExecuteNonQuery();
+                cnn.LoadData("DELETE FROM COURSE WHERE COURSE_ID = '" + txbCourseID.Text + "'");
+                txbCourseID.ReadOnly = false;
                 LoadDBCourse();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            txbCourseID.ReadOnly = false;
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnAddClass_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommClass = sqlConn.CreateCommand();
-                sqlCommClass.CommandText = @"INSERT INTO CLASS SET (CLASS_ID, CLASS_NAME, CLASS_PRESIDENT) VALUES ('" + txbClassID.Text + "', '" + txbClassName.Text + "', '" + txbClassPresident.Text + "')";
-                sqlCommClass.ExecuteNonQuery();
+                cnn.LoadData("INSERT INTO CLASS SET (CLASS_ID, CLASS_NAME, CLASS_PRESIDENT) VALUES ('" + txbClassID.Text + "', '" + txbClassName.Text + "', '" + txbClassPresident.Text + "')");
                 LoadDBClass();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnRepairClass_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommClass = sqlConn.CreateCommand();
-                sqlCommClass.CommandText = @"UPDATE CLASS SET CLASS_NAME = '" + txbClassName.Text + "', CLASS_PRESIDENT '" + txbClassPresident + "' WHERE CLASS_ID = '" + txbClassID.Text + "'";
-                sqlCommClass.ExecuteNonQuery();
-                LoadDBCourse();
+                cnn.LoadData("UPDATE CLASS SET CLASS_NAME = '" + txbClassName.Text + "', CLASS_PRESIDENT '" + txbClassPresident + "' WHERE CLASS_ID = '" + txbClassID.Text + "'");
+                LoadDBClass();
+                txbClassID.ReadOnly = false;
+                ResetControlValues();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
             txbClassID.ReadOnly = false;
-            CloseConnect();*/
         }
 
         private void btnDlClass_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommClass = sqlConn.CreateCommand();
-                sqlCommClass.CommandText = "DELETE FROM CLASS WHERE CLASS_ID = '" + txbClassID.Text + "'";
-                sqlCommClass.ExecuteNonQuery();
-                LoadDBClass();
+            cnn.LoadData("DELETE FROM CLASS WHERE CLASS_ID = '" + txbClassID.Text + "'");
+            LoadDBClass();
+            txbClassID.ReadOnly = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            txbClassID.ReadOnly = false;
-            CloseConnect();*/
+            ResetControlValues(); 
         }
 
         private void btnAddSubject_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommSubject = sqlConn.CreateCommand();
-                sqlCommSubject.CommandText = @"INSERT INTO PUBLISHER SET (PUBLISHER_ID, PUBLISHER_NAME) VALUES ('" + txbSubjectID.Text + "', '" + txbSubjectName.Text + "', '" + nmudTime.Text + "')";
-                sqlCommSubject.ExecuteNonQuery();
-                LoadDBClass();
+                cnn.LoadData("INSERT INTO PUBLISHER SET (PUBLISHER_ID, PUBLISHER_NAME) VALUES ('" + txbSubjectID.Text + "', '" + txbSubjectName.Text + "', '" + nmudTime.Text + "')");
+                LoadDSubject();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnRepairSubject_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommSubject = sqlConn.CreateCommand();
-                sqlCommSubject.CommandText = @"UPDATE PUBLISHER SET PUBLISHER_NAME = ('" + txbSubjectName.Text + "', '" + nmudTime.Text + "') WHERE PUBLISHER_ID = '" + txbSubjectID.Text + "'";
-                sqlCommSubject.ExecuteNonQuery();
-                LoadDBCourse();
+            cnn.LoadData("UPDATE PUBLISHER SET PUBLISHER_NAME = ('" + txbSubjectName.Text + "', '" + nmudTime.Text + "') WHERE PUBLISHER_ID = '" + txbSubjectID.Text + "'");
+            LoadDSubject();
+            txbSubjectID.ReadOnly = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            txbSubjectID.ReadOnly = false;
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnDlSubject_Click(object sender, EventArgs e)
-        {/*
-            OpenConnect();
+        {
             try
             {
-                sqlCommSubject = sqlConn.CreateCommand();
-                sqlCommSubject.CommandText = "DELETE FROM PUBLISHER WHERE PUBLISHER_ID = '" + txbSubjectID.Text + "'";
-                sqlCommSubject.ExecuteNonQuery();
-                LoadDBClass();
+                cnn.LoadData("DELETE FROM PUBLISHER WHERE PUBLISHER_ID = '" + txbSubjectID.Text + "'");
+                LoadDSubject();
+                txbSubjectID.ReadOnly = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi");
             }
-            txbSubjectID.ReadOnly = false;
-            CloseConnect();*/
+            ResetControlValues();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchBookByKeyWord();
+            SearchStudentByKeyWord();
         }
 
         private void txbKeyWord_TextChanged(object sender, EventArgs e)
         {
-            SearchBookByKeyWord();
+            SearchStudentByKeyWord();
+        }
+
+        private void txbCourseName_TextChanged(object sender, EventArgs e)
+        {
+            SearchCoursebyKeyWord();
+        }
+
+        private void txbClassName_TextChanged(object sender, EventArgs e)
+        {
+            SearchClassbyKeyWord();
+        }
+
+        private void txbSubjectName_TextChanged(object sender, EventArgs e)
+        {
+            SearchSubjectbyKeyWord();
+        }
+
+        private void btnSearch2_Click(object sender, EventArgs e)
+        {
+            SearchCoursebyKeyWord();
+        }
+
+        private void btnSearch1_Click(object sender, EventArgs e)
+        {
+            SearchClassbyKeyWord();
+        }
+
+        private void search3_Click(object sender, EventArgs e)
+        {
+            SearchSubjectbyKeyWord();
         }
     }
 }

@@ -38,27 +38,26 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBookRegister = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAcces = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.clBookName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TYPE_BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUBJECT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UNIT_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAcces = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.grInforBook.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookRegister)).BeginInit();
             this.SuspendLayout();
             // 
             // grInforBook
             // 
             this.grInforBook.BackColor = System.Drawing.Color.Lavender;
+            this.grInforBook.Controls.Add(this.btnCancel);
             this.grInforBook.Controls.Add(this.textBox1);
+            this.grInforBook.Controls.Add(this.btnAcces);
             this.grInforBook.Controls.Add(this.comboBox1);
             this.grInforBook.Controls.Add(this.label2);
             this.grInforBook.Controls.Add(this.dtpDateBuy);
@@ -69,7 +68,7 @@
             this.grInforBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grInforBook.Location = new System.Drawing.Point(7, 48);
             this.grInforBook.Name = "grInforBook";
-            this.grInforBook.Size = new System.Drawing.Size(286, 162);
+            this.grInforBook.Size = new System.Drawing.Size(286, 466);
             this.grInforBook.TabIndex = 20;
             this.grInforBook.TabStop = false;
             this.grInforBook.Text = "Thông tin mua";
@@ -144,7 +143,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Lavender;
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvBookRegister);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(299, 48);
             this.groupBox2.Name = "groupBox2";
@@ -153,23 +152,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sách yêu cầu";
             // 
-            // dataGridView1
+            // dgvBookRegister
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBookRegister.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBookRegister.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBookRegister.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clBookName,
             this.BOOK_NAME,
             this.TYPE_BOOK_NAME,
             this.SUBJECT_NAME,
-            this.QUANTITY,
             this.UNIT_PRICE});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(861, 446);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBookRegister.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBookRegister.Location = new System.Drawing.Point(3, 20);
+            this.dgvBookRegister.Name = "dgvBookRegister";
+            this.dgvBookRegister.RowTemplate.Height = 24;
+            this.dgvBookRegister.Size = new System.Drawing.Size(861, 446);
+            this.dgvBookRegister.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(0, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(475, 38);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "DANH MỤC ĐĂNG KÝ SÁCH";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // btnAcces
+            // 
+            this.btnAcces.BackColor = System.Drawing.Color.Lavender;
+            this.btnAcces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcces.ForeColor = System.Drawing.Color.Green;
+            this.btnAcces.Location = new System.Drawing.Point(14, 157);
+            this.btnAcces.Name = "btnAcces";
+            this.btnAcces.Size = new System.Drawing.Size(108, 28);
+            this.btnAcces.TabIndex = 49;
+            this.btnAcces.Text = "Đăng ký";
+            this.btnAcces.UseVisualStyleBackColor = false;
+            this.btnAcces.Click += new System.EventHandler(this.btnAcces_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Lavender;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(166, 157);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(108, 28);
+            this.btnCancel.TabIndex = 50;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // clBookName
             // 
@@ -198,75 +233,11 @@
             this.SUBJECT_NAME.HeaderText = "Môn học";
             this.SUBJECT_NAME.Name = "SUBJECT_NAME";
             // 
-            // QUANTITY
-            // 
-            this.QUANTITY.DataPropertyName = "QUANTITY";
-            this.QUANTITY.HeaderText = "Số lượng";
-            this.QUANTITY.Name = "QUANTITY";
-            // 
             // UNIT_PRICE
             // 
             this.UNIT_PRICE.DataPropertyName = "UNIT_PRICE";
             this.UNIT_PRICE.HeaderText = "Đơn giá";
             this.UNIT_PRICE.Name = "UNIT_PRICE";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Lavender;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSearch.Location = new System.Drawing.Point(1064, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(102, 28);
-            this.btnSearch.TabIndex = 45;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(896, 21);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(162, 24);
-            this.cbSearch.TabIndex = 46;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(0, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(475, 38);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "DANH MỤC ĐĂNG KÝ SÁCH";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // btnAcces
-            // 
-            this.btnAcces.BackColor = System.Drawing.Color.Lavender;
-            this.btnAcces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcces.ForeColor = System.Drawing.Color.Green;
-            this.btnAcces.Location = new System.Drawing.Point(7, 216);
-            this.btnAcces.Name = "btnAcces";
-            this.btnAcces.Size = new System.Drawing.Size(108, 28);
-            this.btnAcces.TabIndex = 49;
-            this.btnAcces.Text = "Đăng ký";
-            this.btnAcces.UseVisualStyleBackColor = false;
-            this.btnAcces.Click += new System.EventHandler(this.btnAcces_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Lavender;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(185, 216);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 28);
-            this.btnCancel.TabIndex = 50;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // frmBuy
             // 
@@ -274,11 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1197, 556);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAcces);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cbSearch);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grInforBook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -288,7 +255,7 @@
             this.grInforBook.ResumeLayout(false);
             this.grInforBook.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookRegister)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,9 +268,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.DataGridView dgvBookRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDateBuy;
         private System.Windows.Forms.Label label4;
@@ -316,7 +281,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_BOOK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn UNIT_PRICE;
     }
 }
